@@ -2,12 +2,23 @@
 
 def data():
     def calc():
-        sum_a = elv_a + elv_b + elv_c
-        prob_a = elv_a/sum_a
-        prob_b = elv_b/sum_a
-        prob_c = elv_c/sum_a
+        sum = elv_a + elv_b + elv_c
+        prob_a = elv_a/sum
+        prob_b = elv_b/sum
+        prob_c = elv_c/sum
+        sum1 = elv_a_1+elv_a_2
+        sum2 = elv_b_1+elv_b_2
+        sum3 = elv_c_1+elv_c_2
+        prob_a1 = elv_a_1/sum1
+        prob_a2 = elv_a_2/sum1
+        prob_b1 = elv_b_1/sum2
+        prob_b2 = elv_b_2/sum2
+        prob_c1 = elv_c_1/sum3
+        prob_c2 = elv_c_2/sum3
 
-        print(f"proba = {prob_a}, probb = {prob_b}, probc = {prob_c}")
+        print(f"/{prob_a}probb = {prob_b}, probc = {prob_c}")
+        print(f"proba1 = {prob_a1}, proba2 = {prob_a2}, probb1 = {prob_b1}")
+        print(f"proba1 = {prob_b2}, proba2 = {prob_c1}, probb1 = {prob_c2}")
 
     print('Dette er en simulering som viser veivalg.')
     str_1 = str("Elven deler seg i tre. Hvor bred er elv")
