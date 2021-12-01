@@ -1,3 +1,5 @@
+#01.12.2021
+
 #Probability simulator
 
 def data():

@@ -1,3 +1,4 @@
+#01.12.2021
 def draw(river1,river2,river3):
     river1_draw = "#"*10*river1
     river2_draw = "#"*10*river2
