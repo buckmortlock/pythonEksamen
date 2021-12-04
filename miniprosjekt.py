@@ -227,3 +227,4 @@ main()
 # format print
 # linjeskift spacing
 # teoretisk sannsynlighet , store talls lov - evt. kommentarsetninger på avvik fra flytskjema
+#test daniel
