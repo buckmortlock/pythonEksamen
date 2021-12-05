@@ -126,98 +126,39 @@ def uavhengighet():
     meny()
 
 def simuleringsprogram():
+    def tallsjekk(data1, data2, level):
+        loop = True
+        while loop is True:
+            try:
+                if level == 1:
+                    elvebredde = int(input(f"Elven deler seg i tre. Hvor bred er elv {data1} (i hele meter)? "))
+                elif level == 2:
+                    elvebredde = int(input(f"Elv {data1} deler seg i to. Hvor bred er elv {data2} (i hele meter)? "))
+                loop = False
+            except:
+                print('Du må skrive et heltall!')
+                loop = True
+
+        return elvebredde
+
     def setup():
         spacer()
         print('\t\t Simulering')
         spacer()
-        print('Dette er en simulering som viser veivalg.')
-        str_1 = str("Elven deler seg i tre. Hvor bred er elv")
-        str_2 = str("deler seg i to. Hvor bred er elv")
-
-        loop = True
-        while loop is True:
-            try:
-                elv_a = int(input(f"{str_1} A? "))
-                loop = False
-
-            except:
-                print('Du må skrive et heltall!')
-                loop = True
-        loop = True
-        while loop is True:
-            try:
-                elv_b = int(input(f"{str_1} B? "))
-                loop = False
-
-            except:
-                print('Du må skrive et heltall!')
-                loop = True
-        loop = True
-        while loop is True:
-            try:
-                elv_c = int(input(f"{str_1} C? "))
-                loop = False
-
-            except:
-                print('Du må skrive et heltall!')
-                loop = True
-
+        print('Dette er en simulering som viser veivalg.\n\n')
+        elv_a = tallsjekk('A','x',1)
+        elv_b = tallsjekk('B','x',1)
+        elv_c = tallsjekk('C','x',1)
         spacer()
-
-        loop = True
-        while loop is True:
-            try:
-                elv_a_1 = int(input(f"Elv A {str_2} A1? "))
-                loop = False
-            except:
-                print('Du må skrive et heltall!')
-                loop = True
-        loop = True
-        while loop is True:
-            try:
-                elv_a_2 = int(input(f"Elv A {str_2} A2? "))
-                loop = False
-            except:
-                print('Du må skrive et heltall!')
-                loop = True
-
+        elv_a_1 = tallsjekk('A','A1',2)
+        elv_a_2 = tallsjekk('A','A2',2)
         spacer()
-
-        loop = True
-        while loop is True:
-            try:
-                elv_b_1 = int(input(f"Elv B {str_2} B1? "))
-                loop = False
-            except:
-                print('Du må skrive et heltall!')
-                loop = True
-        loop = True
-        while loop is True:
-            try:
-                elv_b_2 = int(input(f"Elv B {str_2} B2? "))
-                loop = False
-            except:
-                print('Du må skrive et heltall!')
-                loop = True
-
+        elv_b_1 = tallsjekk('B','B1',2)
+        elv_b_2 = tallsjekk('B','B2',2)
         spacer()
+        elv_c_1 = tallsjekk('C','C1',2)
+        elv_c_2 = tallsjekk('C','C2',2)
 
-        loop = True
-        while loop is True:
-            try:
-                elv_c_1 = int(input(f"Elv C {str_2} C1? "))
-                loop = False
-            except:
-                print('Du må skrive et heltall!')
-                loop = True
-        loop = True
-        while loop is True:
-            try:
-                elv_c_2 = int(input(f"Elv C {str_2} C2? "))
-                loop = False
-            except:
-                print('Du må skrive et heltall!')
-                loop = True
 
         return elv_a, elv_b, elv_c, elv_a_1, elv_a_2, elv_b_1, elv_b_2, elv_c_1, elv_c_2
 
