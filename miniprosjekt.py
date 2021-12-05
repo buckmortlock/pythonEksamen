@@ -133,18 +133,91 @@ def simuleringsprogram():
         print('Dette er en simulering som viser veivalg.')
         str_1 = str("Elven deler seg i tre. Hvor bred er elv")
         str_2 = str("deler seg i to. Hvor bred er elv")
-        elv_a = int(input(f"{str_1} A? "))
-        elv_b = int(input(f"{str_1} B? "))
-        elv_c = int(input(f"{str_1} C? "))
+
+        loop = True
+        while loop is True:
+            try:
+                elv_a = int(input(f"{str_1} A? "))
+                loop = False
+
+            except:
+                print('Du må skrive et heltall!')
+                loop = True
+        loop = True
+        while loop is True:
+            try:
+                elv_b = int(input(f"{str_1} B? "))
+                loop = False
+
+            except:
+                print('Du må skrive et heltall!')
+                loop = True
+        loop = True
+        while loop is True:
+            try:
+                elv_c = int(input(f"{str_1} C? "))
+                loop = False
+
+            except:
+                print('Du må skrive et heltall!')
+                loop = True
+
         spacer()
-        elv_a_1 = int(input(f"Elv A {str_2} A1? "))
-        elv_a_2 = int(input(f"Elv A {str_2} A2 "))
+
+        loop = True
+        while loop is True:
+            try:
+                elv_a_1 = int(input(f"Elv A {str_2} A1? "))
+                loop = False
+            except:
+                print('Du må skrive et heltall!')
+                loop = True
+        loop = True
+        while loop is True:
+            try:
+                elv_a_2 = int(input(f"Elv A {str_2} A2? "))
+                loop = False
+            except:
+                print('Du må skrive et heltall!')
+                loop = True
+
         spacer()
-        elv_b_1 = int(input(f"Elv B {str_2} B1 "))
-        elv_b_2 = int(input(f"Elv B {str_2} B2 "))
+
+        loop = True
+        while loop is True:
+            try:
+                elv_b_1 = int(input(f"Elv B {str_2} B1? "))
+                loop = False
+            except:
+                print('Du må skrive et heltall!')
+                loop = True
+        loop = True
+        while loop is True:
+            try:
+                elv_b_2 = int(input(f"Elv B {str_2} B2? "))
+                loop = False
+            except:
+                print('Du må skrive et heltall!')
+                loop = True
+
         spacer()
-        elv_c_1 = int(input(f"Elv C {str_2} C1? "))
-        elv_c_2 = int(input(f"Elv C {str_2} C2? "))
+
+        loop = True
+        while loop is True:
+            try:
+                elv_c_1 = int(input(f"Elv C {str_2} C1? "))
+                loop = False
+            except:
+                print('Du må skrive et heltall!')
+                loop = True
+        loop = True
+        while loop is True:
+            try:
+                elv_c_2 = int(input(f"Elv C {str_2} C2? "))
+                loop = False
+            except:
+                print('Du må skrive et heltall!')
+                loop = True
 
         return elv_a, elv_b, elv_c, elv_a_1, elv_a_2, elv_b_1, elv_b_2, elv_c_1, elv_c_2
 
@@ -226,7 +299,15 @@ def simuleringsprogram():
               '   /     \             /     \              /     \ \n' +
               f'\033[1;32m{utløp1}  {utløp2}      {utløp3}  {utløp4}      {utløp5}  {utløp6}\033[1;0m')
         spacer()
-        antall_sim = int(input('Hvor mange gjenstander vil du kjøre i simuleringen?'))
+        loop = True
+        while loop is True:
+            try:
+                antall_sim = int(input('Hvor mange gjenstander vil du kjøre i simuleringen?'))
+                loop = False
+            except:
+                print('Du må skrive et heltall!')
+                loop = True
+
 
         oversikt=databehandling(antall_sim)
 
@@ -266,7 +347,8 @@ def simuleringsprogram():
               f'\033[1;31m{sim_utløp1}  {sim_utløp2}      {sim_utløp3}  {sim_utløp4}      {sim_utløp5}  {sim_utløp6}\033[1;0m\n' +
               '\n\033[1;32mGrønn\033[1;0m teoretisk sannsynlighet \n \033[1;31mRød\033[1;0m  simulert sannsynlighet')
 
-        brukersvar=input('Vil du kjøre en ny simulering med samme data? (j/n) ')
+        brukersvar=str(input('Vil du kjøre en ny simulering med samme data? (\033[1;32mj for ny\033[1;0m) '))
+
 
     print('\n\033[1;32m«De store talls lov»\033[1;0m er et begrep som beskriver det forhold at jo flere tilfeller man har av en hendelse '
           'jo nærmere vil man komme det forventede resultatet. Hvis man f.eks. kaster seks ganger med en terning kan '
@@ -275,7 +357,7 @@ def simuleringsprogram():
           'resultatet vil nærme seg at man får en sekser en sjettedel av gangene, og kaster man tusen ganger vil '
           'man ventelig komme enda nærmere en sjettedel seksere, osv.\n')
 
-    input('Trykk \033[1;32mENTER\033[1;0m for å gå til menyen')      #\033[1;32m    \033[1;0m
+    input('Trykk \033[1;32mENTER\033[1;0m for å gå til menyen')
     spacer()
     meny()
 
