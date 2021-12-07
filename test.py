@@ -55,8 +55,7 @@ def intro():
 
 def ikke_uniform():
     spacer()
-    print('\t\tUniform sannsynlighet')
-    spacer()
+    print('Uniform sannsynlighet\n')
     print('Innen sannsynlighetsregning snakker man gjerne om uniform og ikke-uniform sannsynlighetsmodell.\n\n'
           'Vi bruker en uniform sannsynlighetsmodell når alle utfall av en hendelse har like stor sannsynlighet for å skje.\nEt eksempel på en slik situasjon er terningkast.\n')
     svar1=input('Hva er sannsynligheten for at du skal få en femmer på en terning (skriv tallet som en brøk)? ')
@@ -66,19 +65,21 @@ def ikke_uniform():
             print(f'\nDu svarte {svar1}. Det er korrekt\n')
             teller1=3
         else:
-            print(f'\nDu svarte {svar1}. Svaret er ikke rett.\nPå en terning er det 6 utfall. Det er like stor sannsynlihget for alle utfall\n')
+            print(f'\nDu svarte {svar1}. Svaret er ikke rett.\nPå en terning er det 6 utfall. Det er like stor'
+                  f'sannsynlihget for alle utfall\n')
             teller1 +=1
             svar1 = input('Hva er sannsynligheten for at du skal få en femmer på en terning (skriv tallet som en brøk)? ')
-    print('\nSiden en terning har seks utfall, og alle utfall har like stor sannsynlighet, vil sannsynligheten være 1/6 for å få en femmer.\n')
+    print('\nSiden en terning har seks utfall, og alle utfall har like stor sannsynlighet, vil sannsynligheten'
+          'være 1/6 for å få en femmer.\n')
     input('Trykk ENTER for å forsette')
     spacer()
-    print('\t\tIkke-uniform\n\t\tsannsynlighet')
-    spacer()
-    print('Men det er ikke alle hendelser som har like stor sannsynlighet. Slike sannsynlighetsmodeller kaller vi ikke-uniform sannsynlighetsmodell.\n'
-          'Et eksempel på en slik situasjon er hvilken blodtype en tilfeldig valgt person har.\n'
-          'Selv om det er fire blodtyper, er det ca. halvparten av norges befolkning som har den ene blodtypen.\n'
-          'Du vil altså større sannsynlighet for å treffe på en person med blodtype A.\n')
-    svar2=input('En håndballspiller skal ta straffekast. Hun har truffet på 150 av 200 straffekast. Hva er sannsynligheten for at spilleren treffer neste kast (skriv svaret som prosent)? ')
+    print('Ikke-uniform sannsynlighet\n')
+    print('Men det er ikke alle hendelser som har like stor sannsynlighet.\nSlike sannsynlighetsmodeller kaller '
+          'vi ikke-uniform sannsynlighetsmodell.\n\nEt eksempel på en slik situasjon er hvilken blodtype en tilfeldig '
+          'valgt person har.\nSelv om det er fire blodtyper, er det ca. halvparten av norges befolkning som har den '
+          'ene blodtypen.\nDu vil altså større sannsynlighet for å treffe på en person med blodtype A.\n')
+    svar2=input('En håndballspiller skal ta straffekast. Hun har truffet på 150 av 200 straffekast.\nHva er '
+                'sannsynligheten for at spilleren treffer neste kast (skriv svaret som prosent)? ')
     teller2 = 1
     while teller2 < 3:
         if svar2 == '75%' or svar2=='75':
@@ -105,14 +106,14 @@ def gunstig_mulig():
     teller1 = 1
     while teller1 < 3:
         if svar1 == '13':
-            print(f'Du svarte {svar1}. Det er korrekt')
+            print(f'\nDu svarte {svar1}, og det er korrekt')
             teller1 = 3
         else:
             print(f'Du svarte {svar1}. Svaret er ikke rett.\nI en kortstokk er det fire typer kort (hjerter, spar, kløver og ruter). Totalt er det 52 kort.\n')
             teller1 += 1
             svar1 = input(
                 'Hva er sannsynligheten for at du skal få en femmer på en terning (skriv tallet som en brøk)? ')
-    print('En kortstokk har 13 spar, derfor er det 13 mulige utfall.\n')
+    print('\nEn kortstokk har 13 spar, derfor er det 13 mulige utfall.\n')
     input('Trykk ENTER for å forsette')
     spacer()
     meny()
@@ -130,7 +131,7 @@ def uavhengighet():
     teller1 = 1
     while teller1 < 3:
         if svar1 == '1/16':
-            print(f'Du svarte {svar1}. Det er korrekt')
+            print(f'\nDu svarte {svar1}, og det er korrekt')
             teller1 = 3
         else:
             print(f'Du svarte {svar1}. Svaret er ikke rett.\nSannsynligheten for å velge rett dør første gang er 1/4. Sannsynligheten for å velge rett dør andre gang er 1/4\n')
@@ -207,7 +208,7 @@ def simuleringsprogram():
             antall_sim -= 1
         return oversikt
 
-    def teoretisk_sannsynlighet():
+    def teoretisk_sannsynlighet(): #Endring fra opprinnelig plan linje 222-243
         sum_elv = elv_a + elv_b + elv_c
         prob_a = elv_a / sum_elv
         prob_b = elv_b / sum_elv
@@ -230,7 +231,7 @@ def simuleringsprogram():
         sannsynlighet['Utløp 6'] = format(prob_c*prob_c2, '.2%')
         return sannsynlighet
 
-    #init
+    # Herfra og ned kalles funksjoner opp og print utføres.
     spacer()
     print('\t\tSimulering')
     spacer()
@@ -239,9 +240,10 @@ def simuleringsprogram():
           'nedover elven og møter etter hvert et elvekryss hvor elven deler seg i tre.\n\n'
           'De tre elvene deler seg også etter hvert i to. Da har vi til slutt 6 ulike utløp\n'
           'hvor søppelet kan ende opp.(A1,A2,B1,B2,C1 og C2)\n\n'
-          'Du skal nå skrive inn bredde på elvene i elvekryssene.\n'
-          'Bredden på elveløpet vil ha noe å si for hvor lett søppel flyter og ender opp i elven og de påfølgende elvene.\n'
-          'Det er jo naturlig at en bredere elv får mer søppel en ei smal elv.')
+          'Bredden på elveløpet vil ha noe å si for hvor lett søppel flyter og ender opp i\n'
+          'elven og de påfølgende elvene.\n'
+          'Det er jo naturlig at en bredere elv får mer søppel en ei smal elv.\n\n'
+          'Du skal nå skrive inn tenkte data for bredde på elvene i elvekryssene.')
 
     spacer()
     print('                          X <--- Fabrikk dumper søppel her\n' +
@@ -256,10 +258,10 @@ def simuleringsprogram():
           '  A1/   \A2           B1/   \B2            C1/   \C2 \n' +
           '   /     \             /     \              /     \ \n')
 
-    #setupvariabler
+
     brukersvar='j' #Gjør at programmet kjører videre/eller på nytt - ny setup ikke nødvendig.
 
-    elv_a, elv_b, elv_c, elv_a_1, elv_a_2, elv_b_1, elv_b_2, elv_c_1, elv_c_2 = setup()
+    elv_a, elv_b, elv_c, elv_a_1, elv_a_2, elv_b_1, elv_b_2, elv_c_1, elv_c_2 = setup() #kaller opp setupvariabler
 
     #teoretisk sannsynlighet
     teori_sannsyn = teoretisk_sannsynlighet()
@@ -290,20 +292,21 @@ def simuleringsprogram():
                 print('Du må skrive et heltall!')
                 loop = True
 
-        #databehandling - simulering herfra
+        #simulering
+
         oversikt=databehandling(antall_sim)
 
         total = sum(oversikt.values()) / 2
         spacer()
-        #print av databehandling - simulering herfra
-        print(('Kg søppel:' + '\t' + 'prosentdel:').expandtabs(20))
+
+        print(('Kg søppel(frekvens):' + '\t' + 'relativ frekvens:').expandtabs(10))
         print(('Utløp A1: ' + str(oversikt['elv_a_1']) + '\t' + str(format(oversikt['elv_a_1']/total, '.2%')) + '\n' +
             'Utløp A2: ' + str(oversikt['elv_a_2']) + '\t' + str(format(oversikt['elv_a_2']/total, '.2%')) + '\n' +
             'Utløp B1: ' + str(oversikt['elv_b_1']) + '\t' + str(format(oversikt['elv_b_1']/total, '.2%')) + '\n' +
             'Utløp B2: ' + str(oversikt['elv_b_2']) + '\t' + str(format(oversikt['elv_b_2']/total, '.2%')) + '\n' +
             'Utløp C1: ' + str(oversikt['elv_c_1']) + '\t' + str(format(oversikt['elv_c_1']/total, '.2%')) + '\n' +
             'Utløp C2: ' + str(oversikt['elv_c_2']) + '\t' + str(format(oversikt['elv_c_2']/total, '.2%')) + '\n'
-        ).expandtabs(20))
+        ).expandtabs(30))
         print(f'Totalt har det kommet {total} kilo søppel i elva.\n')
         sim_utløp1, sim_utløp2, sim_utløp3, sim_utløp4, sim_utløp5, sim_utløp6 = \
             str(format(oversikt['elv_a_1']/total, '.2%')),\
@@ -325,8 +328,9 @@ def simuleringsprogram():
               '     / \                 / \                  / \ \n' +
               '  A1/   \A2           B1/   \B2            C1/   \C2 \n' +
               '   /     \             /     \              /     \ \n' +
-              f'{utløp1}  {utløp2}      {utløp3}  {utløp4}      {utløp5}  {utløp6} <<-- teoretisk data\n' +
-              f'{sim_utløp1}  {sim_utløp2}      {sim_utløp3}  {sim_utløp4}      {sim_utløp5}  {sim_utløp6} <<-- simulert data\n')
+              f'{utløp1}  {utløp2}      {utløp3}  {utløp4}      {utløp5}  {utløp6} <<-- teoretisk: gunstig \ mulig\n' +
+              f'{sim_utløp1}  {sim_utløp2}      {sim_utløp3}  {sim_utløp4}      {sim_utløp5}  {sim_utløp6} <<-- '
+              f'simulert: relativ frekvens\n')
 
         brukersvar=str(input('Vil du kjøre en ny simulering med samme data? (j for ny) '))
 
